@@ -19,6 +19,20 @@ var questions = [{
         "for",
         "none of the above"],
     correctAnswer : 1
+},{
+    question : "What type of bullet is used in MP5?",
+    choices : [ "3mm",
+        "5mm",
+        "9mm",
+        "50mm"],
+    correctAnswer : 2
+},{
+    question : "How many rounds a Desert Eagle can fire in 1 coil?",
+    choices : [ "12",
+        "9",
+        "50",
+        "15"],
+    correctAnswer : 0
 }];
 
 var currentQuestion = 0;
@@ -31,7 +45,14 @@ function displayNext() {
 }
 
 function displayCurrentQuestion() {
-    /*Write your code here */
+    document.getElementById("question").innerText = questions[currentQuestion].question;
+    var ans = document.getElementById("choice-list");
+    for (var i=0;i<questions[currentQuestion].choices.length;i++)
+    {
+        ans.innerHTML += '<li><input type="radio" name="choices" value="'+ i +'">' + questions[currentQuestion].choices[i] + '</li>';
+    }
+
+
 }
 
 function resetQuiz() {
