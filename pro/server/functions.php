@@ -26,7 +26,7 @@ function getPro(){
     global $con;
     $getProQuery = "select * from products order by RAND();";
     $getProResult = mysqli_query($con,$getProQuery);
-    while($row = mysqli_fetch_array($getProResult)){
+    while($row = mysqli_fetch_assoc($getProResult)){
         $pro_id = $row['pro_id'];
         $pro_title = $row['pro_title'];
         $pro_price = $row['pro_price'];
